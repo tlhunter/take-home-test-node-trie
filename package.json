@@ -1,0 +1,22 @@
+{
+  "name": "trie",
+  "version": "0.0.1",
+  "description": "",
+  "main": "trie.js",
+  "scripts": {
+    "test": "./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlhunter/node-trie.git"
+  },
+  "keywords": [
+    "trie"
+  ],
+  "author": "Thomas Hunter II <me@thomashunter.name>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tlhunter/node-trie/issues"
+  },
+  "homepage": "https://github.com/tlhunter/node-trie#readme"
+}
