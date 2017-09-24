@@ -1,9 +1,11 @@
 # Node Trie
 
+Note: Project is not available on NPM.
+
 ## Usage
 
 ```js
-const Trie = require('trie')
+const Trie = require('trie.js') // whereever you save trie.js
 const words = new Trie()
 
 words.add('the')
