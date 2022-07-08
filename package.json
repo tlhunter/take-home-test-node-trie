@@ -1,6 +1,6 @@
 {
   "name": "trie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "trie.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tlhunter/node-trie.git"
+    "url": "git+https://github.com/tlhunter/take-home-test-node-trie.git"
   },
   "keywords": [
     "trie"
@@ -16,7 +16,7 @@
   "author": "Thomas Hunter II <me@thomashunter.name>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/tlhunter/node-trie/issues"
+    "url": "https://github.com/tlhunter/take-home-test-node-trie/issues"
   },
-  "homepage": "https://github.com/tlhunter/node-trie#readme"
+  "homepage": "https://github.com/tlhunter/take-home-test-node-trie#readme"
 }

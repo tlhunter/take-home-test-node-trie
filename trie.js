@@ -1,77 +1,80 @@
-const TERMINATOR = '**'
+// When a terminator appears in a children Map it means the represented word exists in the Trie
+const TERMINATOR = Symbol('terminator');
 
 function newEntry () {
   return {
     count: 0,
-    children: new Map()
-  }
+    children: new Map(),
+  };
 }
 
 /**
- * case-sensitive
+ * Trie class
+ *
+ * Note that these operations are case-sensitive
  */
 class Trie {
   constructor () {
-    this.root = newEntry()
+    this.root = newEntry();
   }
 
   /**
    * Adds this string into the Trie
    */
   add (string) {
-    let chars = string.split('')
-    let node = this.root
+    const chars = string.split('');
+    let node = this.root;
 
-    for (let char of chars) {
+    for (const char of chars) {
       if (!node.children.has(char)) {
-        node.children.set(char, newEntry())
+        node.children.set(char, newEntry());
       }
-      node.count++
-      node = node.children.get(char)
+      node.count++;
+      node = node.children.get(char);
     }
 
-    node.count++
-    node.children.set(TERMINATOR, true)
+    node.count++;
+    node.children.set(TERMINATOR, true);
   }
 
   /**
    * Determine whether this exact string exist in our Trie
    */
   has (string) {
-    let chars = string.split('')
-    let node = this.root
+    const chars = string.split('');
+    let node = this.root;
 
-    for (let char of chars) {
+    for (const char of chars) {
       if (!node.children.has(char)) {
-        return false // e.g. we have theater, but searched for theatr
+        return false; // e.g. we have theater, but searched for theatr
       }
-      node = node.children.get(char)
+      node = node.children.get(char);
     }
 
     if (node.children.get(TERMINATOR)) {
-      return true
+      return true;
     }
 
     // e.g., we have there, but searched for the
-    return false
+    return false;
   }
 
   /**
    * Counts how many entries exist beginning at this prefix
    */
   count (prefix = '') {
-    let chars = prefix.split('')
-    let node = this.root
+    const chars = prefix.split('');
+    let node = this.root;
 
-    for (let char of chars) {
+    for (const char of chars) {
       if (!node.children.has(char)) {
-        return 0 // e.g. we have theater, but searched for theatr
+        return 0; // e.g. we have theater, but searched for theatr
       }
-      node = node.children.get(char)
+      node = node.children.get(char);
     }
 
-    return node.count
+    return node.count;
   }
-}
+};
 
-module.exports = Trie
+module.exports = Trie;
